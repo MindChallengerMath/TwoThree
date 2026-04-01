@@ -85,13 +85,34 @@ def gambling(waging, money):
         except ValueError:
             print("Your wager must be an interger.")
         return waging
-
+def winning(dice, given_bet)
+    win_multiplier = 0
+    if dice.count(given_bet) == 2:
+        win_multiplier += 2
+    elif dice.count(given_bet) >= 3:
+        win_multiplier += 3
+    else:
+        print("You lose ):")
+    return win_multiplier
 while running:
     print(cash)
+    player_side = None
+    player_wager = 0
+    amount_player_won = 0
+    dice.clear()
     dealing()
-    pick_side(bet)
-    gambling(wager, cash)
+    player_side = int(pick_side(bet))
+    player_wager = int(gambling(wager, cash))
+    cash -= player_wager
     amount_of_dice = input("How many dice would you like to roll?: ")
     amount_of_dice = select_again(amount_of_dice)
     amount_of_dice = int(amount_of_dice)
     player_roll(amount_of_dice)
+    amount_player_wins = winning(dice, player_side)
+    if amount_player_wins == 2:
+        cash += playerwager*2
+    elif amount_player_wins >= 3:
+        cash += playerwager*3
+    if cash <= 0:
+        print("Game Over")
+        running = False
