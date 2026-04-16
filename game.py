@@ -171,8 +171,8 @@ while True:
                 dice_rolled_five += dice.count(5)
                 dice_rolled_six += dice.count(6)
                 if cash >= 100000:
-                        end_game = input("Would you like to continue?: ").capitalize()
-                        if end_game == "No":
+                        end_game = input("Would you like to continue(Y/N): ").capitalize()
+                        if end_game == "N":
                          print("Congrats!!!")
                          running = False
                 if cash <= 0:
